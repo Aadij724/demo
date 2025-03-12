@@ -12,10 +12,10 @@
             "dynamodb:PutItem",
             "dynamodb:Batch*",
             "dynamodb:DeleteItem",
-            "s3:PutObject",
             "ssm:PutParameter",
             "ssm:GetParameter",
-            "kms:Decrypt"
+            "kms:Decrypt",
+            "s3:PutObject"
           ],
           "Effect": "Allow",
           "Resource": "*"
@@ -25,6 +25,12 @@
     },
     "resource_type": "iam_policy",
     "tags": {}
+  },
+  "uuid_trigger": {
+    "resource_type": "cloudwatch_rule",
+    "rule_type": "schedule",
+    "tags": {},
+    "expression": "rate(1 minute)"
   },
   "${target_bucket}": {
     "resource_type": "s3_bucket",
@@ -38,11 +44,5 @@
       "restrict_public_buckets": true
     },
     "tags": {}
-  },
-  "uuid_trigger": {
-    "resource_type": "cloudwatch_rule",
-    "rule_type": "schedule",
-    "tags": {},
-    "expression": "rate(1 minute)"
   }
 }
