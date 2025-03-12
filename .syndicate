@@ -1,0 +1,37 @@
+name: demo
+events:
+- operation: deploy
+  initiator: aadi_jain
+  bundle_name: demo_250312.141916
+  deploy_name: demo
+  time_start: '2025-03-12T14:19:30Z'
+  time_end: '2025-03-12T14:19:34Z'
+  duration_sec: 3.807
+  status: aborted
+  rollback_on_error: false
+- operation: package_meta
+  initiator: aadi_jain
+  bundle_name: demo_250312.141916
+  time_start: '2025-03-12T14:19:18Z'
+  time_end: '2025-03-12T14:19:18Z'
+  duration_sec: 0.068
+  status: failed
+- operation: assemble
+  initiator: aadi_jain
+  bundle_name: demo_250312.141916
+  time_start: '2025-03-12T14:19:18Z'
+  time_end: '2025-03-12T14:19:18Z'
+  duration_sec: 0.002
+  status: succeeded
+- operation: test
+  initiator: aadi_jain
+  time_start: '2025-03-12T14:19:18Z'
+  time_end: '2025-03-12T14:19:18Z'
+  duration_sec: 0.002
+  status: succeeded
+locks:
+  modification_lock:
+    last_modification_date: '2025-03-12T08:49:34Z'
+    is_locked: false
+    initiator: aadi_jain
+latest_deploy: {}
